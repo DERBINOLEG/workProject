@@ -9,28 +9,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let helper = Helper()
     private let textLabel = UILabel()
-    private let imageView = UIImageView()
-    private let imageContainerView: UIView = {
-        $0.layer.shadowOpacity = 1
-        $0.layer.shadowRadius = 10
-        $0.layer.shadowOffset = CGSize(width: 5, height: -7)
-        $0.layer.shadowColor = UIColor.red.cgColor
-        return $0
-    }(UIView())
+    private let stackView = UIStackView()
+    private let shadowView = ShadowView(imageName: "raccoon")
+    private let secondShadowView = ShadowView(imageName: "custom")
+    
+    private let helper = Helper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateNumbers()
         
         setupLabel()
-        view.addSubview(textLabel)
-        view.addSubview(imageContainerView)
-        imageContainerView.addSubview(imageView)
+        setupStackView()
+        view.addSubview(stackView)
         setupView()
         setupLayout()
-        setupImageView()
     }
     
     private func updateNumbers() {
@@ -44,12 +38,15 @@ class ViewController: UIViewController {
         textLabel.textColor = .red
     }
     
-    private func setupImageView() {
-        imageView.image = UIImage(named: "raccoon")
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.shadowOffset = CGSize(width: 15, height: 15)
-        imageView.layer.cornerRadius = 20
-        imageView.clipsToBounds = true
+    private func setupStackView() {
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.spacing = 10
+        
+        stackView.addArrangedSubview(textLabel)
+        stackView.addArrangedSubview(shadowView)
+        stackView.addArrangedSubview(secondShadowView)
     }
     
     private func setupView() {
@@ -64,21 +61,13 @@ class ViewController: UIViewController {
     }
     
     private func setupLayout() {
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            textLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageContainerView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 150),
-            imageContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageContainerView.heightAnchor.constraint(equalToConstant: 200),
-            imageContainerView.widthAnchor.constraint(equalToConstant: 200),
-            imageView.topAnchor.constraint(equalTo: imageContainerView.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: imageContainerView.bottomAnchor),
-            imageView.leadingAnchor.constraint(equalTo: imageContainerView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: imageContainerView.trailingAnchor)
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+            stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)
         ])
     }
 }
