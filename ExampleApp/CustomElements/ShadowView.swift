@@ -22,6 +22,12 @@ class ShadowView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let shadowPath = UIBezierPath(rect: bounds)
+        layer.shadowPath = shadowPath.cgPath
+    }
+    
     private func setupImageView(_ imageName: String) {
         imageView.image = UIImage(named: imageName)
         imageView.contentMode = .scaleAspectFill
@@ -49,5 +55,9 @@ class ShadowView: UIView {
         layer.shadowOpacity = 0.7
         layer.shadowOffset = CGSize(width: 5, height: 5)
         layer.shadowRadius = 10
+    }
+    
+    func updateImage(_ imageName: String) {
+        imageView.image = UIImage(named: imageName)
     }
 }

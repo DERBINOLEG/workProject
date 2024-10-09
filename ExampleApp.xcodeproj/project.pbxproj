@@ -13,6 +13,8 @@
 		069D08B82C8E75B10077DF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069D08B72C8E75B10077DF0B /* Assets.xcassets */; };
 		069D08BB2C8E75B10077DF0B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 069D08BA2C8E75B10077DF0B /* Base */; };
 		069D08C32C8E829F0077DF0B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D08C22C8E829F0077DF0B /* Helper.swift */; };
+		DD83E5592CB68B8E003CCDA4 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83E5582CB68B8E003CCDA4 /* UIView+Gradient.swift */; };
+		DD83E5692CB696C5003CCDA4 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83E5682CB696C5003CCDA4 /* CustomButton.swift */; };
 		DDF330442CB598E300A01EA1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF330432CB598E300A01EA1 /* ShadowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		069D08BA2C8E75B10077DF0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		069D08BC2C8E75B10077DF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		069D08C22C8E829F0077DF0B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DD83E5582CB68B8E003CCDA4 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
+		DD83E5682CB696C5003CCDA4 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DDF330432CB598E300A01EA1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,14 +64,56 @@
 			children = (
 				069D08AE2C8E75AF0077DF0B /* AppDelegate.swift */,
 				069D08B02C8E75AF0077DF0B /* SceneDelegate.swift */,
-				069D08B22C8E75AF0077DF0B /* ViewController.swift */,
-				DDF330432CB598E300A01EA1 /* ShadowView.swift */,
-				069D08C22C8E829F0077DF0B /* Helper.swift */,
-				069D08B72C8E75B10077DF0B /* Assets.xcassets */,
-				069D08B92C8E75B10077DF0B /* LaunchScreen.storyboard */,
+				DD83E55A2CB68D35003CCDA4 /* ViewControllers */,
+				DD83E55B2CB68D49003CCDA4 /* CustomElements */,
+				DD83E55D2CB68D79003CCDA4 /* Services */,
+				DD83E55E2CB68D94003CCDA4 /* Resources */,
+				DD83E55C2CB68D66003CCDA4 /* Extensions */,
 				069D08BC2C8E75B10077DF0B /* Info.plist */,
 			);
 			path = ExampleApp;
+			sourceTree = "<group>";
+		};
+		DD83E55A2CB68D35003CCDA4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				069D08B22C8E75AF0077DF0B /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DD83E55B2CB68D49003CCDA4 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				DDF330432CB598E300A01EA1 /* ShadowView.swift */,
+				DD83E5682CB696C5003CCDA4 /* CustomButton.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		DD83E55C2CB68D66003CCDA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD83E5582CB68B8E003CCDA4 /* UIView+Gradient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD83E55D2CB68D79003CCDA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				069D08C22C8E829F0077DF0B /* Helper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DD83E55E2CB68D94003CCDA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				069D08B92C8E75B10077DF0B /* LaunchScreen.storyboard */,
+				069D08B72C8E75B10077DF0B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +190,8 @@
 				069D08AF2C8E75AF0077DF0B /* AppDelegate.swift in Sources */,
 				069D08B12C8E75AF0077DF0B /* SceneDelegate.swift in Sources */,
 				069D08C32C8E829F0077DF0B /* Helper.swift in Sources */,
+				DD83E5692CB696C5003CCDA4 /* CustomButton.swift in Sources */,
+				DD83E5592CB68B8E003CCDA4 /* UIView+Gradient.swift in Sources */,
 				DDF330442CB598E300A01EA1 /* ShadowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
